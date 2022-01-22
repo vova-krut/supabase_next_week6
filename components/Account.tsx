@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { supabase } from "../utils/supabaseClient";
 // @ts-ignore
@@ -190,7 +191,17 @@ export default function Account({ session }) {
         <input id="email" type="text" value={session.user.email} disabled />
       </div>
       <form className="imgform" onSubmit={handleUpload}>
-        {avatarUrl && <img src={avatarUrl} width={256} height={256} />}
+        {avatarUrl && (
+          <div className="Image">
+            <Image
+              className="Image"
+              src={avatarUrl}
+              width={256}
+              height={256}
+              alt="avatar"
+            />
+          </div>
+        )}
         <input id="file" className="inputfile" type="file" name="avatar" />
         <label htmlFor="file" className="inputImg">
           Choose a file...
