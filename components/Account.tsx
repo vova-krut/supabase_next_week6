@@ -59,7 +59,6 @@ export default function Account({ session }) {
       .from("UserData")
       .select("email")
       .eq("email", session.user.email);
-    console.log(data);
     //@ts-ignore
     if (data.length !== 0) {
       let { error } = await supabase.from("UserData").upsert(updates, {
@@ -82,6 +81,7 @@ export default function Account({ session }) {
       }
     }
 
+    console.log(avatarUrl);
     setLoading(false);
   };
 
@@ -193,13 +193,7 @@ export default function Account({ session }) {
       <form className="imgform" onSubmit={handleUpload}>
         {avatarUrl && (
           <div className="Image">
-            <Image
-              className="Image"
-              src={avatarUrl}
-              width={256}
-              height={256}
-              alt="avatar"
-            />
+            <img src={avatarUrl} width={256} height={256} alt="avatar" />
           </div>
         )}
         <input id="file" className="inputfile" type="file" name="avatar" />

@@ -1,0 +1,21 @@
+---
+kind: pipeline
+name: "Verify & build app"
+
+concurrency:
+  limit: 2
+
+steps:
+  - name: install everything
+    image: node:16.13.1
+    commands:
+      - npm install react-scripts@latest
+      - npx create-next-app@latest . --typescript
+      - npm install @supabase/supabase-js
+      - npm install @supabase/ui
+      - npm run build
+
+trigger:
+  branch:
+    exclude:
+      - main
