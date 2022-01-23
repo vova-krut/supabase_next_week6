@@ -14,7 +14,6 @@ steps:
       - npm install @supabase/ui
       - npm run build
 
-steps:
 - name: docker  
   image: plugins/docker
   settings:
@@ -23,7 +22,7 @@ steps:
     password: 
       from_secret: registry/password
     repo: vovakrut/supabase
-    tags: {DRONE_COMMIT:0:7}
+    tags: DRONE_COMMIT:0:7
 
 trigger:
   branch:
