@@ -16,5 +16,7 @@ steps:
 
 trigger:
   branch:
+    include:
+      *
     exclude:
       - main
