@@ -27,7 +27,11 @@ steps:
 
 trigger:
   branch:
-    include:
-      - feature/*
-    exclude:
-      - main
+  - main
+
+# trigger:
+#   branch:
+#     include:
+#       - feature/*
+#     exclude:
+#       - main
