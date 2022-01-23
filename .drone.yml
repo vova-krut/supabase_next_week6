@@ -22,7 +22,7 @@ steps:
       password:
         from_secret: registry/password
       repo: vovakrut/supabase
-      tags: DRONE_COMMIT:0:7
+      tags: latest
 
 trigger:
   branch:
