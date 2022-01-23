@@ -20,7 +20,7 @@ steps:
       username:
         from_secret: registry_username
       password:
-        from_secret: registry/password
+        from_secret: registry_password
       repo: vovakrut/supabase
       tags: latest
 
